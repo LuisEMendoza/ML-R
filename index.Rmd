@@ -1,0 +1,8 @@
+---
+title: "Introducción al Machine Learning"
+---
+
+## con R y RStudio
+
+### Docente:
+Luis Enrique Mendoza Ruiz
