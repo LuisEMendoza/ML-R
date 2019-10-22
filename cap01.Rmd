@@ -44,16 +44,18 @@ Una vez instalado, debemos cargarlo en memoria. Tenemos dos opciones:
 
 Independientemente del método empleado, en la consola no debería aparecer algún mensaje de error. Ahora bien, escribimos el siguiente comando:
 
-```{r}
+```
 library(ggvis)
 iris %>% ggvis(~Sepal.Length, ~Sepal.Width, fill = ~Species) %>% layer_points()
 ```
+![](images/001-ggvis.png)
 
 Aquí podemos observar que existe una fuerte correlación entre la longitud y la anchura del sépalo en la especie _Setosa_, no así con las _Versicolor_ o _Virginica_. Tracemos ahora otro diagrama de dispersión pero con los datos que corresponden a los pétalos:
 
-```{r}
+```
 iris %>% ggvis(~Petal.Length, ~Petal.Width, fill = ~Species) %>% layer_points()
 ```
+![](images/002-ggvis.png)
 
 Estos diagramas indican que existe una correlación positiva entre la longitud y la anchura de los pétalos, para todas las especies de iris que están disponibles en nuestra muestra. Pero eso es solo el resultado de una observación, probemos esta hipótesis para asegurarnos de que dicha correlación existe en realidad.
 
@@ -251,6 +253,7 @@ Las nuevas instancias son clasificadas buscando la mayoría o la ponderación. E
 Tomemos nuestra función `knn()` y simplemente le agregamos unos cuantos argumentos:
 
 ```{r}
+library(class)
 iris_pred <- knn(train = iris.training, test = iris.test, cl = iris.trainLabels, k=3)
 iris_pred
 ```
