@@ -4,8 +4,6 @@ navbar:
     left:
     - text: "Inicio "
       href: index.html
-    - text: "¿Cómo utilizar estos apuntes?"
-      href: Ayuda.html
     - text: "Contenido"
       menu:
         - text: "Preparando el entorno"
