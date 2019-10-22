@@ -1,17 +1,22 @@
 ---
-title: "Git y GitHub en RStudio"
+title: "Preparando el entorno de desarrollo"
+output:
+  html_document:
+    toc: true
+    toc_level: 5
 ---
 
+## Git, GitHub, R, RStudio y RMardown
 
 El uso del control de versiones es obligatorio cuando se trabaja de manera colectiva y se quiere controlar el flujo de trabajo y el seguimiento de los cambios en el mismo. Incluso, para trabajar de manera individual, es deseable mantener vigilados los cambios realizados a un documento importante. 
 RStudio trabaja bastante bien con Git (recordando que utilizaremos Github para hospedar nuestros archivos). Así que comencemos. 
 
 
-## Requisitos
+### Requisitos
 
 A continuación explicamos qué se debe instalar, siendo primero ciertas aplicaciones:
 
-### _Software_
+#### _Software_
 
 Debemos descargar __Git__ desde [Descargas](https://git-scm.com/downloads). Lo instalamos. Enseguida descargamos __R__ desde el repositorio [CRAN](https://cran.itam.mx/) que corresponde a nuestro país (México). En esta página se encuentran versiones para los tres sistemas operativos más utilizados. En el caso de _Windows_, existen pasos adicionales para su descarga:
 
@@ -36,11 +41,11 @@ Para el sistema operativo adecuado:
 
 Lo ejecutamos enseguida. Queda instalar algunas librerías necesarias para la creación de nuestros documentos. 
 
-### Librerías necesarias
+#### Librerías necesarias
 
 Aunque los programas instalados ya pueden ser utilizados, falta instalar algunos paquetes que añaden funcionalidad y lo necesario para poder elaborar nuestros documento y páginas web. Procedamos a agregarlas a _RStudio_.
 
-#### _RMarkdown_
+##### _RMarkdown_
 
 En primera instancia, debemos instalar `RMarkdown`. Esto se realiza yendo al menú _Tools_ y dar clic sobre la opción _Install packages_:
 
@@ -58,7 +63,7 @@ Esperamos a que descargue los archivos necesarios y los instale. Veremos algunas
 
 ![](images/004-rmarkdown.png)
 
-#### Tinytex
+##### Tinytex
 
 Quizá necesitemos generar algunos documentos _PDF_ en el camino. Para ello, hay que instalar alguna distribución _Latex_. Sin embargo, pueden resultar bastante pesadas, llegando incluso a requerir descargas de hasta 1GB. Debido a este inconveniente, existe una distribución ligera que contiene solo lo necesario para la generación de documentos técnicos: _Tinytex_. La instalaremos en _RStudio_ de la siguiente manera:
 
@@ -83,12 +88,14 @@ Básicamente, avisa que podrían aparecer dos ventanas de error y que no pasa na
 
 Nuestro entorno de trabajo está listo para generar documentos estadísticos por medio de RStudio.
 
-## Creando una cuenta en GitHub
+### Creando una cuenta en GitHub
+
 Ahora nos dirigimos a [GitHub](https://github.com) y nos creamos una cuenta dando clic en el botón _Sign up_ que se encuentra al lado superior derecho: 
 ![GitHub](images/001-github.png)
 
 
 Nos pedirán un nombre de usuario, una dirección de correo y la contraseña. Abajo de todo, existe un paso de verificación de cuenta, solo hay que aprobarlo:
+
 ![GitHub](images/002-github.png)
 
 
@@ -102,42 +109,49 @@ git config --global user.name "TuNombreEnGithub"
 Listo.
 
 
-## Creando un repositorio
+### Creando un repositorio
+
 En la página de GitHub.com, ya autentificados, nos dirigimos al signo '+' que se encuentra al lado superior derecho de la pantalla. Damos clic allí y luego en _New Repository_. 
 ![GitHub](images/007-github.png)
 
 
 Le ponemos el nombre que deseemos, le damos una descripción adecuada, lo dejamos público, damos _check_ a _Initialize this repository with a README_. Damos clic en el botón _Add .gitignore_ y escribimos _R_. Damos clic en el siguiente botón _Add license_ y seleccionamos _GNU General Public License v3.0_ y presionamos _Create repository_.
+
 ![GitHub](images/008-github.png)
 
 
-## Clonando el repositorio
+### Clonando el repositorio
 
 1. En nuestra página GitHub, damos clic a nuestro repositorio a clonar.
 ![GitHub](images/009-github.png)
 
 
 2. En la pestaña _Code_ localizamos el botón verde _Clone or download_.
+
 ![GitHub](images/010-github.png)
 
 
 3. Damos clic en el botón _Copy to clipboard_ para copiar la dirección del repositorio.
+
 ![GitHub](images/011-github.png)
 
 
 4. Ejecutamos RStudio y damos clic en _File -> New Project -> Version Control -> Git_. Pegamos la dirección copiada en _Repository URL_, presionamos `tab` para asegurarnos de que se ponga el nombre original del repositorio y presionamos _Create project_.
+
 ![GitHub](images/012-github.png)
 
 
-## Creando el primer documento RMarkdown
+### Creando el primer documento RMarkdown
+
 1. Con el proyecto creado y sin haber salido de RStudio, damos clic en _File -> New File -> RMarkdown_.
 2. Elegimos _HTML_ como salida por defecto.
 3. Guardamos el archivo en _File -> Save_.
 4. Ponemos un nombre adecuado (por ejemplo, _test_) y guardamos.
 
 
-## Consolidar y empujar los cambios a GitHub
+### Consolidar y empujar los cambios a GitHub
 1. Con nuestro archivo guardado, es momento de «consolidar». Para ello, nos dirigimos a la pestaña _Git_ que se encuentra en el panel superior derecho:
+
 ![commit](images/013-github.png)
 
 
@@ -147,13 +161,17 @@ Le ponemos el nombre que deseemos, le damos una descripción adecuada, lo dejamo
 
 
 4. Después de un pequeño lapso, se mostrará una ventana con algunos mensajes. La cerramos con el botón _Close_.
+
 5. Presionamos _Pull_ en la ventana _Review Changes_ que queda, esto es para «jalar» los cambios hechos en el repositorio de manera remota. Esperamos a que aparezca otra ventana y el mensaje «Ya está actualizado» y la cerramos con _Close_.
+
 6. Ahora presionamos _Push_ para «empujar» nuestros cambios hechos recientemente al repositorio. Aquí Git nos pedirá el nombre de usuario y la contraseña de la cuenta. Podremos cerrar la ventana cuando aparezca el botón _Close_.
+
 7. Ahora hay que dirigirnos a nuestro repositorio GitHub para verificar los cambios realizados.
 
 
-## Guardar en caché nuestras credenciales de GitHub
+### Guardar en caché nuestras credenciales de GitHub
 Cada vez que empujemos nuestros cambios a GitHub, éste nos pedirá nuestro nombre de usuario y contraseña. Si no queremos escribirlas cada vez, podemos almacenarlas de manera temporal en la caché. 
+
 1. Para Windows, se instala _Git for Windows_ desde [](https://gitforwindows.org/) y se escribe en esa aplicación lo siguiente: 
 
 ```
@@ -167,13 +185,12 @@ $ git config --global credential.helper cache
 ```
 
 
-## Creando ramas localmente
+### Creando ramas localmente
 Un concepto intrínseco en GitHub es el uso de ramas, las cuales permiten desarrollar el proyecto principal en instancias separadas. Así, los cambios realizados no se reflejan en él de inmediato, si no que se someten a revisión cuando una de las ramas se considera terminada. Cuando los cambios hechos en una rama se consideran lo adecuados para implementarse en el proyecto principal, se realiza una petición _pull_. Al aprobarse, converge en la rama principal, que se llama _Master_.
+
 Para crearlas a través de RStudio:
+
 1. Nos dirigimos al panel inferior izquierdo, damos clic a la pestaña _Terminal_ y escribimos: 
-
-![commit](images/015-github.png)
-
 
 ```
 git branch NombreDeRama
@@ -183,6 +200,7 @@ git branch NombreDeRama
 ```
 git status
 ```
+![commit](images/015-github.png)
 
 Es importante notar que solo creamos la rama, no estamos dentro de ella (aún seguimos en la rama Master).
 3. Para dirigirnos a la rama recién creada, escribimos:
@@ -198,12 +216,12 @@ git status
 ```
 
 
-## Haciendo cambios locales con Git
+### Haciendo cambios locales con Git
 Generemos la salida HTML de nuestro documento RMarkdown en un directorio separado llamado _docs_. Para lograrlo:
 
 1. Creamos un nuevo directorio llamado _docs_ en el panel inferior derecho de RStudio.
-2. Abrimos y agregamos al inicio del documento, justo después del campo _tittle_
 
+2. Abrimos y agregamos al inicio del documento, justo después del campo _tittle_
 
 ```
 knit: (function(input_file, encoding) {
@@ -218,7 +236,7 @@ knit: (function(input_file, encoding) {
 4. Damos clic en el botón _Knit_ que se encuentra en el panel donde estamos editando nuestro documento. Se generará el archivo HTML. Podremos ahora visualizarlo en su forma final.
 
 
-## Consolidar cambios locales con Git
+### Consolidar cambios locales con Git
 Con el archivo HTML generado, es momento de consolidar los cambios.
 
 1. Determinar el estado del archivo:
@@ -260,7 +278,7 @@ git diff --stat --summary master..NombreDeRama
 ```
 
 
-## Abrir una petición pull en GitHub
+### Abrir una petición pull en GitHub
 Es momento de empujar los cambios:
 1. Empuja los cambios al repositorio remoto:
 
@@ -269,24 +287,27 @@ git push -u origin NombreDeRama
 ```
 
 2. Creamos una petición pull en el sitio de GitHub, para ello, vamos al repositorio y veremos en la pantalla principal la rama que se acaba de empujar y a su lado, un botón verde con la leyenda _Compare & Pull Request_. Presionamos dicho botón.
-![new request](images/016-github.png)
 
+![new request](images/016-github.png)
 
 Si este aviso no aparece (usualmente ocurre cuando estamos editando muy rápido nuestro repositorio), tendremos que ir justo debajo de donde debió aparecer el aviso. Damos clic en el botón que dice "Branch:master" y seleccionamos el nombre de nuestra rama en el desplegable. Enseguida damos clic en el botón "New pull request".
 
 Aparece una pantalla en la que debemos llenar con datos de la petición. Debemos asegurarnos de que en la parte superior sí esté seleccionada la base como master y compare como el nombre de nuestra rama. Presionamos el botón _Create Pull Request_.
 
+### Converge la pull request en GitHub
 
-## Converge la pull request en GitHub
 En GitHub nos dirigimos a la pestaña _Pull Requests_ de nuestro repositorio. Bajamos y damos clic en el botón verde _Merge Pull Request_. Confirmamos dando clic en el botón _Confirm merge_ y borramos la rama nueva, si lo deseamos.
 
+### Creando la página del sitio
 
-## Creando la página del sitio
 Ahora queremos publicar este documento en formato HTML como la página del sitio. Hay que realizar los siguientes pasos:
 
 1. Entrar a la pestaña _Settings_ del repositorio.
+
 2. Bajar hasta la sección _GitHub Pages_.
+
 3. En _Source_ dar clic en el botón desplegable que dice _None_ y seleccionar _master branch/docs folder_.
+
 ![pages](images/017-github.png)
 
 
@@ -295,7 +316,7 @@ Ahora queremos publicar este documento en formato HTML como la página del sitio
 5. Damos clic en el sitio mostrado para poder acceder a nuestra página.
 
 
-## Actualiza el repositorio local
+### Actualiza el repositorio local
 Después de haber unido las ramas del proyecto, toca actualizar el repositorio local, es decir, la computadora en la que se está trabajando.
 
 1. En la terminal de RStudio, escribir
@@ -322,7 +343,7 @@ git branch -D adiciones
 git log --oneline --graph --all
 ```
 
-## Agregando funcionalidad a nuestra página
+### Agregando funcionalidad a nuestra página
 Agregaremos una página de bienvenida y navegación a nuestro sitio github.io.
 
 1. Creamos una nueva rama llamada _theme_.
@@ -371,3 +392,42 @@ output:
  9. Abrimos la _pull request_ y la convergemos.
  
  10. Verificamos nuestro sitio.
+ 
+## Tidyverse
+
+Es momento de instalar los paquetes que son exactamente para el _análisis de datos_, el _machine learning_ y el _big data_. Para ello utilizaremos el mismo proceso para instalar que el visto anteriormente. En la ventana que aparece tras dar clic en _Tools -> Install packages_ escribiremos `tidyverse`:
+
+![](images/001-tidyverse.png)
+ 
+Esperamos a que descargue:
+ 
+![](images/002-tidyverse.png)
+ 
+e instale. Lo sabremos porque tendremos una pantalla muy similar a la siguiente:
+ 
+![](images/003-tidyverse.png)
+ 
+Sin embargo, es necesario cargar los paquetes que hemos instalado. Para ello se utiliza el comando `library(Nombre_del_paquete)`. Aunque los paquetes deban instalarse una sola vez, siempre deben ser cargados al iniciar sesión. Escribimos pues:
+
+![](images/004-tidyverse.png)
+
+Y al ejecutarlo dando `Enter` obtendremos la siguiente información en pantalla, mostrando los paquetes instalados y cargados:
+
+![](images/005-tidyverse.png)
+ 
+## Conjuntos de datos de ejemplo o _datasets_
+
+Muchos de los conjuntos de datos analizados en estas páginas pertenecen al siguiente paquete instalable desde internet: `datos`. Es muy recomendable instalarlo, junto con otras dependencias. Primero instalemos `datos`:
+
+![](images/006-tidyverse.png)
+
+Enseguida instalamos las dependencias del paquete. Pero como serán varios que debemos instalar, escojamos otro método para hacerlo, más rápido en cuanto a su captura. En el panel de la consola escribiremos lo siguiente:
+
+```
+install.packages(c("nycflights13", "gapminder", "Lahman", "nasaweather", "babynames", "fueleconomy"))
+```
+Esperemos que finalice la descarga y ya tenemos listas nuestras herramientas de trabajo.
+
+
+
+ 

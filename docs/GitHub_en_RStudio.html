@@ -349,7 +349,51 @@ $(document).ready(function () {
 <p>El uso del control de versiones es obligatorio cuando se trabaja de manera colectiva y se quiere controlar el flujo de trabajo y el seguimiento de los cambios en el mismo. Incluso, para trabajar de manera individual, es deseable mantener vigilados los cambios realizados a un documento importante. RStudio trabaja bastante bien con Git (recordando que utilizaremos Github para hospedar nuestros archivos). Así que comencemos.</p>
 <div id="requisitos" class="section level2">
 <h2>Requisitos</h2>
-<p>Debemos descargar Git desde <a href="https://git-scm.com/downloads">Descargas</a>. Lo instalamos. Ahora bajamos e instalamos RStudio desde <a href="https://www.rstudio.com/products/rstudio/download/">Descargas</a>, cuidando que sea obviamente la versión deseada. Lo ejecutamos enseguida.</p>
+<p>A continuación explicamos qué se debe instalar, siendo primero ciertas aplicaciones:</p>
+<div id="software" class="section level3">
+<h3><em>Software</em></h3>
+<p>Debemos descargar <strong>Git</strong> desde <a href="https://git-scm.com/downloads">Descargas</a>. Lo instalamos. Enseguida descargamos <strong>R</strong> desde el repositorio <a href="https://cran.itam.mx/">CRAN</a> que corresponde a nuestro país (México). En esta página se encuentran versiones para los tres sistemas operativos más utilizados. En el caso de <em>Windows</em>, existen pasos adicionales para su descarga:</p>
+<ol style="list-style-type: decimal">
+<li><p>Seleccionamos el enlace <em>Download R for Windows</em>: <img src="images/001-r.png" /></p></li>
+<li><p>Enseguida damos clic en el enlace <em>Install R for the first time</em>: <img src="images/002-r.png" /></p></li>
+<li><p>Y terminamos con la descarga del instalador: <img src="images/003-r.png" /></p></li>
+</ol>
+<p>La instalación es normal, incluso sin modificar ninguna opción por defecto.</p>
+<p>Ahora bajamos e instalamos <strong>RStudio</strong> desde <a href="https://www.rstudio.com/products/rstudio/download/">Descargas</a>, cuidando que sea obviamente la versión deseada:</p>
+<p><img src="images/001-rstudio.png" /></p>
+<p>Para el sistema operativo adecuado:</p>
+<p><img src="images/002-rstudio.png" /></p>
+<p>Lo ejecutamos enseguida. Queda instalar algunas librerías necesarias para la creación de nuestros documentos.</p>
+</div>
+<div id="librerías-necesarias" class="section level3">
+<h3>Librerías necesarias</h3>
+<p>Aunque los programas instalados ya pueden ser utilizados, falta instalar algunos paquetes que añaden funcionalidad y lo necesario para poder elaborar nuestros documento y páginas web. Procedamos a agregarlas a <em>RStudio</em>.</p>
+<div id="rmarkdown" class="section level4">
+<h4><em>RMarkdown</em></h4>
+<p>En primera instancia, debemos instalar <code>RMarkdown</code>. Esto se realiza yendo al menú <em>Tools</em> y dar clic sobre la opción <em>Install packages</em>:</p>
+<p><img src="images/001-rmarkdown.png" /></p>
+<p>Aparecerá una ventana, en la cual escribiremos el nombre del paquete a instalar: <code>rmarkdown</code>. Notemos que mientras vamos escribiendo el nombre, RStudio nos sugiere posibles paquetes, podemos seleccionar el deseado desde que lo muestra.</p>
+<p><img src="images/002-rmarkdown.png" /></p>
+<p>Ya seleccionado damos clic en <em>Install</em>, asegurándonos de que la casilla <em>Install dependencies</em> esté seleccionada:</p>
+<p><img src="images/003-rmarkdown.jpg" /></p>
+<p>Esperamos a que descargue los archivos necesarios y los instale. Veremos algunas barras de descarga. Sabremos que ya ha terminado cuando aparezca el siguiente mensaje en la ventana <em>Console</em>:</p>
+<p><img src="images/004-rmarkdown.png" /></p>
+</div>
+<div id="tinytex" class="section level4">
+<h4>Tinytex</h4>
+<p>Quizá necesitemos generar algunos documentos <em>PDF</em> en el camino. Para ello, hay que instalar alguna distribución <em>Latex</em>. Sin embargo, pueden resultar bastante pesadas, llegando incluso a requerir descargas de hasta 1GB. Debido a este inconveniente, existe una distribución ligera que contiene solo lo necesario para la generación de documentos técnicos: <em>Tinytex</em>. La instalaremos en <em>RStudio</em> de la siguiente manera:</p>
+<p>En el panel de la consola (Console) comenzaremos a escribir <code>tinytex</code>. Si mientras lo escribimos aparece un recuadro flotante con la palabra <em>tinitex::</em>, tal como se muestra en la siguiente imagen, significa que está instalado. <img src="images/001-tinytex.png" /></p>
+<p>En caso contrario, toca instalarlo mediante un proceso exactamente igual al que usamos cuando instalamos <em>RMarkdown</em>. Terminando, volvemos a probar si aparece el recuadro. Al hacerlo, damos <code>Enter</code> y aparecerá un menú contextual con varias opciones. Seleccionamos <em>install_tinytex</em>:</p>
+<p><img src="images/002-tinytex.png" /></p>
+<p>Al haberlo hecho, debe quedar lo siguiente en consola:</p>
+<p><img src="images/003-tinytex.png" /></p>
+<p>Damos <code>Enter</code> y el programa comenzará a instalar la distribución. Tardará un rato, ya que deberá descargar, compilar e instalar. Sin embargo, lanzará un aviso como el que se muestra:</p>
+<p><img src="images/004-tinytex.png" /></p>
+<p>Básicamente, avisa que podrían aparecer dos ventanas de error y que no pasa nada, que felizmente las ignoremos dando clic en <code>Aceptar</code>. Después de un rato, hayan o no salido los mensajes de error, el programa habrá terminado con la siguiente frase, pidiendo que cerremos <em>RStudio</em> y volvamos a abrirlo:</p>
+<p><img src="images/005-tinytex.png" /></p>
+<p>Nuestro entorno de trabajo está listo para generar documentos estadísticos por medio de RStudio.</p>
+</div>
+</div>
 </div>
 <div id="creando-una-cuenta-en-github" class="section level2">
 <h2>Creando una cuenta en GitHub</h2>
