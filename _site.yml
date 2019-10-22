@@ -9,6 +9,8 @@ navbar:
     - text: "Preparando el entorno"
       href: cap00.html
     - text: "Contenido" 
+    - text: "Un algoritmo introductorio"
+      href: cap01.html
       menu:
         - text: "Unidades"
         - text: "Encuadre"
