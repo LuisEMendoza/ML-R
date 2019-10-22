@@ -353,6 +353,9 @@ div.tocify {
 <li>
   <a href="cap01.html">Un algoritmo introductorio</a>
 </li>
+<li>
+  <a href="cap01.html">Un algoritmo introductorio</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -831,7 +834,8 @@ compara</code></pre>
 ## 40         virginica        virginica</code></pre>
 <p>Esta es una indicación del rendimiento, pero si queremos profundizar podemos instalar y ejecutar otro paquete: <code>gmodels</code>.</p>
 <p>Con esto obtendremos una tabla cruzada, la cual nos mostrará de manera más concisa los posibles errores del modelo y las relaciones entre las clases del set de prueba y las clases del modelo en sí.</p>
-<pre class="r"><code>CrossTable(x = iris.testLabels, y = iris_pred, prop.chisq=FALSE)</code></pre>
+<pre class="r"><code>library(gmodels)
+CrossTable(x = iris.testLabels, y = iris_pred, prop.chisq=FALSE)</code></pre>
 <pre><code>## 
 ##  
 ##    Cell Contents

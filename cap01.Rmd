@@ -280,6 +280,7 @@ Esta es una indicación del rendimiento, pero si queremos profundizar podemos in
 Con esto obtendremos una tabla cruzada, la cual nos mostrará de manera más concisa los posibles errores del modelo y las relaciones entre las clases del set de prueba y las clases del modelo en sí.
 
 ```{r}
+library(gmodels)
 CrossTable(x = iris.testLabels, y = iris_pred, prop.chisq=FALSE)
 ```
 

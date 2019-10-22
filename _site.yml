@@ -10,7 +10,8 @@ navbar:
       href: cap00.html
     - text: "Un algoritmo introductorio"
       href: cap01.html
-     
+    - text: "Un algoritmo introductorio"
+      href: cap01.html
 output:
   html_document:
     theme: cosmo
