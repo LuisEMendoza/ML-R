@@ -299,6 +299,7 @@ As you have done before, you can study the effect of the normalization, but you�
 You already know what’s next! Let’s split up the data in a training and test set. In this case, though, you handle things a little bit differently: you split up the data based on the labels that you find in iris$Species. Also, the ratio is in this case set at 75-25 for the training and test sets.
 
 ```{r}
+library(caret)
 index <- createDataPartition(iris$Species, p=0.75, list=FALSE)
 ```
 

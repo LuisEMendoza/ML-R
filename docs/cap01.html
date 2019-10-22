@@ -347,14 +347,20 @@ div.tocify {
 <li>
   <a href="Ayuda.html">¿Cómo utilizar estos apuntes?</a>
 </li>
-<li>
-  <a href="cap00.html">Preparando el entorno</a>
-</li>
-<li>
-  <a href="cap01.html">Un algoritmo introductorio</a>
-</li>
-<li>
-  <a href="cap01.html">Un algoritmo introductorio</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Contenido
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="cap00.html">Preparando el entorno</a>
+    </li>
+    <li>
+      <a href="cap01.html">Un algoritmo introductorio</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -881,7 +887,8 @@ CrossTable(x = iris.testLabels, y = iris_pred, prop.chisq=FALSE)</code></pre>
 <p>In the following, you’ll go through the steps as they have been outlined above, but this time, you’ll make use of caret to classify your data. Note that you have already done a lot of work if you’ve followed the steps as they were outlined above: you already have a hold on your data, you have explored it, prepared your workspace, etc. Now it’s time to preprocess your data with caret!</p>
 <p>As you have done before, you can study the effect of the normalization, but you’ll see this later on in the tutorial.</p>
 <p>You already know what’s next! Let’s split up the data in a training and test set. In this case, though, you handle things a little bit differently: you split up the data based on the labels that you find in iris$Species. Also, the ratio is in this case set at 75-25 for the training and test sets.</p>
-<pre class="r"><code>index &lt;- createDataPartition(iris$Species, p=0.75, list=FALSE)</code></pre>
+<pre class="r"><code>library(caret)
+index &lt;- createDataPartition(iris$Species, p=0.75, list=FALSE)</code></pre>
 <pre class="r"><code>iris.training &lt;- iris[index,]</code></pre>
 <pre class="r"><code>iris.test &lt;- iris[-index,]</code></pre>
 <p>You’re all set to go and train models now! But, as you might remember, caret is an extremely large project that includes a lot of algorithms. If you’re in doubt on what algorithms are included in the project, you can get a list of all of them. Pull up the list by running names(getModelInfo()), just like the code chunk below demonstrates. Next, pick an algorithm and train a model with the train() function:</p>

@@ -6,12 +6,12 @@ navbar:
       href: index.html
     - text: "¿Cómo utilizar estos apuntes?"
       href: Ayuda.html
-    - text: "Preparando el entorno"
-      href: cap00.html
-    - text: "Un algoritmo introductorio"
-      href: cap01.html
-    - text: "Un algoritmo introductorio"
-      href: cap01.html
+    - text: "Contenido"
+      menu:
+        - text: "Preparando el entorno"
+          href: cap00.html
+        - text: "Un algoritmo introductorio"
+          href: cap01.html
 output:
   html_document:
     theme: cosmo
