@@ -6,8 +6,8 @@ navbar:
       href: index.html
     - text: "¿Cómo utilizar estos apuntes?"
       href: Ayuda.html
-    - text: "Git y GitHub en RStudio"
-      href: GitHub_en_RStudio.html
+    - text: "Preparando el entorno"
+      href: cap00.html
     - text: "Contenido" 
       menu:
         - text: "Unidades"
